@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portal SIMI - Brechó</title>
+    <style>
+        :root{
+            --gap: 1rem;
+            --bg: #f7f7f8;
+            --card-bg: #fff;
+            --accent: #0078d4;
+        }
+        html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+        body{background:var(--bg);color:#111;display:flex;flex-direction:column;min-height:100vh;}
+        header{background:linear-gradient(180deg, rgba(0,0,0,0.02), transparent);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+        header h1{font-size:1.125rem;margin:0}
+        header nav a{color:var(--accent);text-decoration:none;margin-left:1rem;font-weight:600}
+        main{flex:1;padding:1.25rem;max-width:1200px;margin:0 auto;width:100%;}
+        .intro{margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+        .intro p{margin:0;color:#444}
+        /* Grid */
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+            gap:var(--gap);
+        }
+        figure{
+            margin:0;
+            background:var(--card-bg);
+            border-radius:8px;
+            overflow:hidden;
+            box-shadow:0 6px 18px rgba(15,15,15,0.06);
+            display:flex;
+            flex-direction:column;
+            min-height:160px;
+        }
+        .thumb{
+            width:100%;
+            aspect-ratio: 4/3;
+            object-fit:cover;
+            display:block;
+        }
+        figcaption{
+            padding:0.5rem 0.75rem;
+            font-size:0.95rem;
+            color:#222;
+            border-top:1px solid rgba(0,0,0,0.04);
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        .price{color:var(--accent);font-weight:700}
+        /* Lightbox */
+        .lightbox{
+            position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:50;
+        }
+        .lightbox.open{display:flex}
+        .lightbox img{max-width:90%;max-height:85%;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
+        .close-btn{position:absolute;top:1rem;right:1rem;background:transparent;border:0;color:#fff;font-size:1.5rem;cursor:pointer}
+        /* responsive tweaks */
+        @media (max-width:520px){
+            header{padding:0.75rem}
+            .intro{flex-direction:column;align-items:flex-start;gap:0.5rem}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Produtos Brechó Escolar</h1>
+        <nav>
+            <a href="index.html">Início</a>
+             <a href="products2.html">Comes & Bebes</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p>Veja nossa galeria de produtos </p>
+            <div style="color:#666;font-size:0.95rem">Mostrando <strong>49</strong> itens</div>
+        </section>
+
+        <section class="grid" aria-live="polite">
+            <!-- Repita os blocos figure para cada produto, atualize src & alt conforme necessário -->
+
+
+            <figure>
+                <img class="thumb" src="images/product1.jpeg" alt="Produto 1" loading="lazy" data-large="images/product1-large.jpg">
+                <figcaption>
+                    <span>Produto 1</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product2.jpeg" alt="Produto 2" loading="lazy" data-large="images/product2-large.jpg">
+                <figcaption>
+                    <span>Produto 2</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product3.jpeg" alt="Produto 3" loading="lazy" data-large="images/product3-large.jpg">
+                <figcaption>
+                    <span>Produto 3</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product4.jpeg" alt="Produto 4" loading="lazy" data-large="images/product4-large.jpg">
+                <figcaption>
+                    <span>Produto 4</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product5.jpeg" alt="Produto 5" loading="lazy" data-large="images/product5-large.jpg">
+                <figcaption>
+                    <span>Produto 5</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product6.jpeg" alt="Produto 6" loading="lazy" data-large="images/product6-large.jpg">
+                <figcaption>
+                    <span>Produto 6</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product7.jpeg" alt="Produto 7" loading="lazy" data-large="images/product7-large.jpg">
+                <figcaption>
+                    <span>Produto 7</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product8.jpeg" alt="Produto 8" loading="lazy" data-large="images/product8-large.jpg">
+                <figcaption>
+                    <span>Produto 8</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product9.jpeg" alt="Produto 9" loading="lazy" data-large="images/product9-large.jpg">
+                <figcaption>
+                    <span>Produto 9</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product10.jpeg" alt="Produto 10" loading="lazy" data-large="images/product10-large.jpg">
+                <figcaption>
+                    <span>Produto 10</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product11.jpeg" alt="Produto 11" loading="lazy" data-large="images/product11-large.jpg">
+                <figcaption>
+                    <span>Produto 11</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product12.jpeg" alt="Produto 12" loading="lazy" data-large="images/product12-large.jpg">
+                <figcaption>
+                    <span>Produto 12</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product13.jpeg" alt="Produto 13" loading="lazy" data-large="images/product12-large.jpg">
+                <figcaption>
+                    <span>Produto 13</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product14.jpeg" alt="Produto 12" loading="lazy" data-large="images/product12-large.jpg">
+                <figcaption>
+                    <span>Produto 14</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product15.jpeg" alt="Produto 12" loading="lazy" data-large="images/product12-large.jpg">
+                <figcaption>
+                    <span>Produto 15</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product16.jpeg" alt="Produto 12" loading="lazy" data-large="images/product12-large.jpg">
+                <figcaption>
+                    <span>Produto 16</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+            <figure>
+                <img class="thumb" src="images/product17.jpeg" alt="Produto 17" loading="lazy" data-large="images/product17-large.jpg">
+                <figcaption>
+                    <span>Produto 17</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product18.jpeg" alt="Produto 18" loading="lazy" data-large="images/product18-large.jpg">
+                <figcaption>
+                    <span>Produto 18</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product19.jpeg" alt="Produto 19" loading="lazy" data-large="images/product19-large.jpg">
+                <figcaption>
+                    <span>Produto 19</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product20.jpeg" alt="Produto 20" loading="lazy" data-large="images/product20-large.jpg">
+                <figcaption>
+                    <span>Produto 20</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product21.jpeg" alt="Produto 21" loading="lazy" data-large="images/product21-large.jpg">
+                <figcaption>
+                    <span>Produto 21</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product22.jpeg" alt="Produto 22" loading="lazy" data-large="images/product22-large.jpg">
+                <figcaption>
+                    <span>Produto 22</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product23.jpeg" alt="Produto 23" loading="lazy" data-large="images/product23-large.jpg">
+                <figcaption>
+                    <span>Produto 23</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product24.jpeg" alt="Produto 24" loading="lazy" data-large="images/product24-large.jpg">
+                <figcaption>
+                    <span>Produto 24</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product25.jpeg" alt="Produto 25" loading="lazy" data-large="images/product25-large.jpg">
+                <figcaption>
+                    <span>Produto 25</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product26.jpeg" alt="Produto 26" loading="lazy" data-large="images/product26-large.jpg">
+                <figcaption>
+                    <span>Produto 26</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product27.jpeg" alt="Produto 27" loading="lazy" data-large="images/product27-large.jpg">
+                <figcaption>
+                    <span>Produto 27</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product28.jpeg" alt="Produto 28" loading="lazy" data-large="images/product28-large.jpg">
+                <figcaption>
+                    <span>Produto 28</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product29.jpeg" alt="Produto 29" loading="lazy" data-large="images/product29-large.jpg">
+                <figcaption>
+                    <span>Produto 29</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product30.jpeg" alt="Produto 30" loading="lazy" data-large="images/product30-large.jpg">
+                <figcaption>
+                    <span>Produto 30</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product31.jpeg" alt="Produto 31" loading="lazy" data-large="images/product31-large.jpg">
+                <figcaption>
+                    <span>Produto 31</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product32.jpeg" alt="Produto 32" loading="lazy" data-large="images/product32-large.jpg">
+                <figcaption>
+                    <span>Produto 32</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product33.jpeg" alt="Produto 33" loading="lazy" data-large="images/product33-large.jpg">
+                <figcaption>
+                    <span>Produto 33</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product34.jpeg" alt="Produto 34" loading="lazy" data-large="images/product34-large.jpg">
+                <figcaption>
+                    <span>Produto 34</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product35.jpeg" alt="Produto 35" loading="lazy" data-large="images/product35-large.jpg">
+                <figcaption>
+                    <span>Produto 35</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product36.jpeg" alt="Produto 36" loading="lazy" data-large="images/product36-large.jpg">
+                <figcaption>
+                    <span>Produto 36</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product37.jpeg" alt="Produto 37" loading="lazy" data-large="images/product37-large.jpg">
+                <figcaption>
+                    <span>Produto 37</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product38.jpeg" alt="Produto 38" loading="lazy" data-large="images/product38-large.jpg">
+                <figcaption>
+                    <span>Produto 38</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product39.jpeg" alt="Produto 39" loading="lazy" data-large="images/product39-large.jpg">
+                <figcaption>
+                    <span>Produto 39</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product40.jpeg" alt="Produto 40" loading="lazy" data-large="images/product40-large.jpg">
+                <figcaption>
+                    <span>Produto 40</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product41.jpeg" alt="Produto 41" loading="lazy" data-large="images/product41-large.jpg">
+                <figcaption>
+                    <span>Produto 41</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product42.jpeg" alt="Produto 42" loading="lazy" data-large="images/product42-large.jpg">
+                <figcaption>
+                    <span>Produto 42</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product43.jpeg" alt="Produto 43" loading="lazy" data-large="images/product43-large.jpg">
+                <figcaption>
+                    <span>Produto 43</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product44.jpeg" alt="Produto 44" loading="lazy" data-large="images/product44-large.jpg">
+                <figcaption>
+                    <span>Produto 44</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product45.jpeg" alt="Produto 45" loading="lazy" data-large="images/product45-large.jpg">
+                <figcaption>
+                    <span>Produto 45</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product46.jpeg" alt="Produto 46" loading="lazy" data-large="images/product46-large.jpg">
+                <figcaption>
+                    <span>Produto 46</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/product47.jpeg" alt="Produto 47" loading="lazy" data-large="images/product47-large.jpg">
+                <figcaption>
+                    <span>Produto 47</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+        
+        </section>
+    </main>
+
+    <header>
+        <h1>Brinquedos </h1>
+    </header>
+
+     <section class="intro">
+            <p>Veja nossa galeria de brinquedos </p>
+            <div style="color:#666;font-size:0.95rem">Mostrando <strong>14</strong> opções</div>
+        </section>
+
+        <section class="grid" aria-live="polite">
+            <!-- Repita os blocos figure para cada produto, atualize src & alt conforme necessário -->
+
+
+            <figure>
+                <img class="thumb" src="images/images2/product1.jpeg" alt="Produto 1" loading="lazy" data-large="images/product1-large.jpg">
+                <figcaption>
+                    <span>Produto 1</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/images2/product2.jpeg" alt="Produto 2" loading="lazy" data-large="images/product2-large.jpg">
+                <figcaption>
+                    <span>Produto 2</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/images2/product3.jpeg" alt="Produto 3" loading="lazy" data-large="images/product3-large.jpg">
+                <figcaption>
+                    <span>Produto 3</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/images2/product4.jpeg" alt="Produto 4" loading="lazy" data-large="images/product4-large.jpg">
+                <figcaption>
+                    <span>Produto 4</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/images2/product5.jpeg" alt="Produto 5" loading="lazy" data-large="images/product5-large.jpg">
+                <figcaption>
+                    <span>Produto 5</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/images2/product6.jpeg" alt="Produto 6" loading="lazy" data-large="images/product6-large.jpg">
+                <figcaption>
+                    <span>Produto 6</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/images2/product7.jpeg" alt="Produto 7" loading="lazy" data-large="images/product7-large.jpg">
+                <figcaption>
+                    <span>Produto 7</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/images2/product8.jpeg" alt="Produto 8" loading="lazy" data-large="images/product8-large.jpg">
+                <figcaption>
+                    <span>iProduto 8</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/images2/product9.jpeg" alt="Produto 9" loading="lazy" data-large="images/product9-large.jpg">
+                <figcaption>
+                    <span>Produto 9</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/images2/product10.jpeg" alt="Produto 10" loading="lazy" data-large="images/product10-large.jpg">
+                <figcaption>
+                    <span>Produto 10</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <img class="thumb" src="images/images2/product11.jpeg" alt="Produto 11" loading="lazy" data-large="images/product11-large.jpg">
+                <figcaption>
+                    <span>Produto 11</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+             <figure>
+                <img class="thumb" src="images/images2/product12.jpeg" alt="Produto 11" loading="lazy" data-large="images/product11-large.jpg">
+                <figcaption>
+                    <span>Produto 12</span>
+                    <span class="price">IN$1</span>
+                </figcaption>
+            </figure>
+
+
+  
+   <script src="js/script.js" defer></script>
+</body>
+</html>
